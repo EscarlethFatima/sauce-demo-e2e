@@ -40,6 +40,10 @@ Run a single spec:
 
     npx playwright test tests/catalog/product-catalog.spec.ts
 
+Run a single spec with a specific browser(chromium,firefox,webkit): 
+
+    npx playwright test tests/catalog/product-catalog.spec.ts --project=chromium
+
 ## Known Issues – problem_user
 
 The application was tested using the `problem_user` account to identify known defects intentionally present in the system.
