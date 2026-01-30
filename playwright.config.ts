@@ -26,7 +26,7 @@ export default defineConfig({
     ['list'], // console output
     ['html', {
       outputFolder: 'playwright-report',
-      open: 'on-failure',
+      open: process.env.CI ? 'never' : 'on-failure',
     }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
