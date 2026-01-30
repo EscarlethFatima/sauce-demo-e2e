@@ -36,6 +36,11 @@ export class CartPage {
         return prices.map(p => Number(p.replace('$', '')));
     }
 
+    async checkout(){
+        await this.checkoutButton.click();
+        await expect(this.page).toHaveURL(/checkout-step-one/);
+    }
+
     async getDisplayedSubtotal(): Promise<number> {
         const subtotalText = await this.page.getByTestId('subtotal-label').textContent();
         return Number(subtotalText!.replace(/[^0-9.]/g, ''));
