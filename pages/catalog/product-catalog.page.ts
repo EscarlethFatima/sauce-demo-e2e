@@ -56,7 +56,17 @@ export class ProductCatalogPage {
     async openProductDetails(item: Locator) {
         await this.itemName(item).click();
         await expect(this.page).toHaveURL(/inventory-item/);
-      }
+    }
+    async getItemName(item: Locator): Promise<string> {
+        return item.getByTestId('inventory-item-name').textContent();
+    }
+    async getItemDescription(item: Locator): Promise<string> {
+        return item.getByTestId('inventory-item-desc').textContent();
+    }
+
+    async getItemPrice(item: Locator): Promise<string> {
+        return item.getByTestId('inventory-item-price').textContent();
+    }
 
     async addItemToCart(item: Locator) {
         await this.addToCartButton(item).click();

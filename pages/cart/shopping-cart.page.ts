@@ -40,14 +40,4 @@ export class CartPage {
         await this.checkoutButton.click();
         await expect(this.page).toHaveURL(/checkout-step-one/);
     }
-
-    async getDisplayedSubtotal(): Promise<number> {
-        const subtotalText = await this.page.getByTestId('subtotal-label').textContent();
-        return Number(subtotalText!.replace(/[^0-9.]/g, ''));
-    }
-
-    async calculateExpectedTotal(): Promise<number> {
-        const prices = await this.getItemPrices();
-        return prices.reduce((sum, price) => sum + price, 0);
-    }
 }

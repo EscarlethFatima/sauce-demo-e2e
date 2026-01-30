@@ -69,13 +69,14 @@ test.describe('Product Catalog tests', () => {
                                                                                    inventoryItemPage,
                                                                                }) => {
         const firstItem = catalogPage.inventoryItems.first();
-        const expectedName = await catalogPage.itemName(firstItem).textContent();
-        const expectedPrice = await catalogPage.itemPrice(firstItem).textContent();
+        const expectedName = await catalogPage.getItemName(firstItem);
+        const expectedPrice = await catalogPage.getItemPrice(firstItem);
+        const expectedDescription = await catalogPage.getItemDescription(firstItem);
 
         await catalogPage.openProductDetails(firstItem);
 
         await expect(inventoryItemPage.name).toHaveText(expectedName!);
         await expect(inventoryItemPage.price).toHaveText(expectedPrice!);
-        await expect(inventoryItemPage.description).toBeVisible();
+        await expect(inventoryItemPage.description).toHaveText(expectedDescription!);
     });
 });
