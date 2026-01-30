@@ -11,6 +11,7 @@ export class ProductCatalogPage {
     readonly itemPrice: (item: Locator) => Locator;
     readonly itemImage: (item: Locator) => Locator;
     readonly addToCartButton: (item: Locator) => Locator;
+    readonly removeFromCartButton: (item: Locator) => Locator;
     readonly sortDropdown: Locator;
 
     constructor(page: Page) {
@@ -32,6 +33,9 @@ export class ProductCatalogPage {
 
         this.addToCartButton = (item: Locator) =>
             item.locator('[data-test^="add-to-cart"]');
+
+        this.removeFromCartButton = (item: Locator) =>
+            item.locator('[data-test^="remove"]');
         this.sortDropdown = page.getByTestId('product-sort-container');
     }
     async getAllProductNames(): Promise<string[]> {
@@ -53,4 +57,18 @@ export class ProductCatalogPage {
         await this.itemName(item).click();
         await expect(this.page).toHaveURL(/inventory-item/);
       }
+
+    async addItemToCart(item: Locator) {
+        await this.addToCartButton(item).click();
+    }
+
+    async addMultipleItemsToCart(items: Locator[]) {
+        for (const item of items) {
+            await this.addToCartButton(item).click();
+        }
+    }
+
+    async removeItemFromCart(item: Locator) {
+        await this.removeFromCartButton(item).click();
+    }
 }

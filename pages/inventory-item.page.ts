@@ -8,6 +8,7 @@ export class InventoryItemPage {
   readonly price: Locator;
   readonly image: Locator;
   readonly addToCartButton: Locator;
+  readonly removeFromCartButton: Locator;
   constructor(page: Page) {
     this.page = page;
 
@@ -16,5 +17,6 @@ export class InventoryItemPage {
     this.price = page.getByTestId('inventory-item-price');
     this.image = page.locator('.inventory_details_img');
     this.addToCartButton = page.getByTestId('add-to-cart');
+    this.removeFromCartButton = page.getByTestId('remove-sauce-labs-backpack');
   }
 }
