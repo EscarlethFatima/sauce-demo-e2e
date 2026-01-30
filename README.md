@@ -40,9 +40,26 @@ Run a single spec:
 
     npx playwright test tests/catalog/product-catalog.spec.ts
 
-Run a single spec with a specific browser(chromium,firefox,webkit): 
+Run a single spec with a specific browser(chromium,firefox,webkit):
 
     npx playwright test tests/catalog/product-catalog.spec.ts --project=chromium
+
+## Workers (Parallel Execution)
+
+Playwright uses **workers** to run tests in parallel and reduce execution time.
+
+- A worker is an isolated process that executes tests independently
+- Each worker has its own browser context and does not share state
+- More workers = faster test execution
+
+### Default behavior
+
+- Local runs use available CPU cores
+- CI environments typically run with fewer workers
+
+### Running tests with a specific number of workers
+
+    npx playwright test --workers=2
 
 ## Known Issues – problem_user
 
@@ -50,4 +67,4 @@ The application was tested using the `problem_user` account to identify known de
 
 Issues found during testing are documented in detail in the following file:
 
--  **[BUGS.md](./BUGS.md)**
+- **[BUGS.md](./BUGS.md)**
