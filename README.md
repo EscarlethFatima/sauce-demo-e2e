@@ -1,20 +1,17 @@
+## Playwright Swag Labs Catalog Tests
 
-Playwright Swag Labs Catalog Tests
------------
 End-to-end UI test automation built with **Playwright** and **TypeScript**, following **Page Object Model (POM)** and **data-driven testing** best practices to ensure scalable and maintainable test coverage.
 
+## Tech Stack
 
-Tech Stack
------------------------------------
-
-- Playwright  
-- TypeScript  
-- Playwright Test Runner  
-- Page Object Model (POM)  
+- Playwright
+- TypeScript
+- Playwright Test Runner
+- Page Object Model (POM)
 - Data-Driven Testing
 
-Project Structure
------------------------------------
+## Project Structure
+
 ```text
 ├── fixtures/        # Custom Playwright fixtures
 ├── pages/           # Page Objects
@@ -23,25 +20,30 @@ Project Structure
 ├── playwright.config.ts
 └── README.md
 ```
-   
-Running Tests:
------------------------------------
+
+## Running Tests:
+
 Install dependencies:
 
     npm install
     npx playwright install
-    
+
 Run all tests:
 
     npx playwright test  
 
-
 Run tests in headed mode:
-
 
     npx playwright test --headed
 
 Run a single spec:
 
+    npx playwright test tests/catalog/product-catalog.spec.ts
 
-    npx playwright test tests/product-catalog.spec.ts
+## Known Issues – problem_user
+
+The application was tested using the `problem_user` account to identify known defects intentionally present in the system.
+
+Issues found during testing are documented in detail in the following file:
+
+-  **[BUGS.md](./BUGS.md)**
