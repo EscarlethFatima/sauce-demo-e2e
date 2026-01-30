@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/pages.fixtures';
+import { test, expect } from '../../fixtures/pages.fixtures';
 
 test.describe('Checkout Flow Tests', () => {
 

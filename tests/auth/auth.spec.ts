@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/login.page';
-import { HeaderComponent } from '../components/header.component';
+import { LoginPage } from '../../pages/auth/login.page';
+import { HeaderComponent } from '../../components/header.component';
 
 test.describe('Authentication Tests', () => {
     let loginPage: LoginPage;

@@ -1,12 +1,12 @@
 import { test as base, expect } from '@playwright/test';
-import { LoginPage } from '../pages/login.page';
-import { ProductCatalogPage } from '../pages/product-catalog.page';
-import { CartPage } from '../pages/shopping-cart.page';
+import { LoginPage } from '../pages/auth/login.page';
+import { ProductCatalogPage } from '../pages/catalog/product-catalog.page';
+import { CartPage } from '../pages/cart/shopping-cart.page';
 import { HeaderComponent } from '../components/header.component';
-import { CheckoutFormPage } from '../pages/checkout-form.page';
-import { CheckoutOverviewPage } from '../pages/checkout-overview.page';
-import { CheckoutCompletePage } from '../pages/checkout-complete.page';
-import { InventoryItemPage } from '../pages/inventory-item.page';
+import { CheckoutFormPage } from '../pages/checkout/checkout-form.page';
+import { CheckoutOverviewPage } from '../pages/checkout/checkout-overview.page';
+import { CheckoutCompletePage } from '../pages/checkout/checkout-complete.page';
+import { InventoryItemPage } from '../pages/catalog/inventory-item.page';
 
 const test = base.extend<{
   catalogPage: ProductCatalogPage;

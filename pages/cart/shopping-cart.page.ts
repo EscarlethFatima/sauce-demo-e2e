@@ -1,5 +1,5 @@
 import {Page, Locator, expect} from '@playwright/test';
-import { HeaderComponent } from '../components/header.component';
+import { HeaderComponent } from '../../components/header.component';
 export class CartPage {
     readonly page: Page;
 

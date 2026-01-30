@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/pages.fixtures';
+import { test, expect } from '../../fixtures/pages.fixtures';
 export type SortOption = 'az' | 'za' | 'lohi' | 'hilo';
 
 type SortScenario<T> = {

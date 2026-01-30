@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/pages.fixtures';
+import { test, expect } from '../../fixtures/pages.fixtures';
 
 test.describe('Shopping Cart Tests', () => {
     test('Adding product updates cart badge count', async ({
